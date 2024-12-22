@@ -69,41 +69,49 @@ const Navbar = () => {
     };
   }, []);
   return (
-    <div
-      className={cn(
-        "h-[80px] px-6 flex items-center justify-between relative",
-        scrolling && "border-b"
-      )}
-    >
-      {theme === "light" ? (
-        <Image src={logo} height={100} width={130} alt="logo" />
-      ) : (
-        <Image src={logoWhite} height={100} width={130} alt="logo" />
-      )}
+    <section className="sticky top-0">
+      <div
+        className={cn(
+          "h-[80px]   px-6 flex items-center justify-between relative",
+          scrolling && "border-b bg-background"
+        )}
+      >
+        {theme === "light" ? (
+          <Image src={logo} height={100} width={130} alt="logo" />
+        ) : (
+          <Image src={logoWhite} height={100} width={130} alt="logo" />
+        )}
 
-      <div className="h-full flex justify-center items-center gap-x-12">
-        {links.map(({ id, href, name }) => (
-          <Link
-            href={href}
-            key={id}
-            className="capitalize text-foreground hover:opacity-80 transition-all duration-300 hover:tracking-widest font-normal"
-          >
-            {name}
-          </Link>
-        ))}
-      </div>
-      <div className="flex justify-center items-center gap-x-4">
-        <Search />
-        <Separator orientation="vertical" />
-        <div>
-          {theme === "light" ? (
-            <Image src={menu} height={20} width={20} alt="menu" quality={100} />
-          ) : (
-            <Menu />
-          )}
+        <div className="h-full flex justify-center items-center gap-x-12">
+          {links.map(({ id, href, name }) => (
+            <Link
+              href={href}
+              key={id}
+              className="capitalize text-foreground hover:opacity-80 transition-all duration-300 hover:tracking-widest font-normal"
+            >
+              {name}
+            </Link>
+          ))}
+        </div>
+        <div className="flex justify-center items-center gap-x-4">
+          <Search />
+          <Separator orientation="vertical" />
+          <div>
+            {theme === "light" ? (
+              <Image
+                src={menu}
+                height={20}
+                width={20}
+                alt="menu"
+                quality={100}
+              />
+            ) : (
+              <Menu />
+            )}
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
