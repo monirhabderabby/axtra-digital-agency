@@ -23,10 +23,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${kanit.className} antialiased overflow-x-hidden dark:bg-[#181414]`}
+        className={`${kanit.className} antialiased overflow-x-hidden dark:bg-[#181414] `}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <ThemeToggler />
+          <div className="sticky top-1/2">
+            <ThemeToggler />
+          </div>
           <Navbar />
           {children}
         </ThemeProvider>
