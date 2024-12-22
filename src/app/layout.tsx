@@ -1,4 +1,6 @@
 import Navbar from "@/components/sections/navbar";
+import ThemeToggler from "@/components/ui/theme-toogler";
+import { ThemeProvider } from "@/provider/theme-provider";
 import type { Metadata } from "next";
 import { Kanit } from "next/font/google";
 import "./globals.css";
@@ -20,9 +22,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${kanit.className} antialiased`}>
-        <Navbar />
-        {children}
+      <body
+        className={`${kanit.className} antialiased overflow-x-hidden dark:bg-[#181414]`}
+      >
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <ThemeToggler />
+          <Navbar />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
