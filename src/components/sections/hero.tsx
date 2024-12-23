@@ -8,7 +8,7 @@ import GradualSpacing from "../ui/gradual-spacing";
 
 export default function Hero() {
   return (
-    <div className="flex flex-col pt-[100px] min-h-screen  relative">
+    <div className="flex flex-col pt-[100px] min-h-screen z-10 relative">
       <Image
         src={star}
         width={50}

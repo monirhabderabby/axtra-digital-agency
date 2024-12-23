@@ -2,6 +2,7 @@
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { useEffect, useRef } from "react";
+import Section1 from "./section1";
 
 const WhyChooseUs = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -37,10 +38,8 @@ const WhyChooseUs = () => {
     <div className="">
       <div>
         <div ref={sectionRef} className="flex w-[500vw] h-screen relative">
-          <section id="component" className="w-[100vw] h-screen bg-orange-200">
-            <div className="min-h-screen w-full flex justify-center items-center text-[100px]">
-              Why Choose US 1
-            </div>
+          <section id="component" className="w-[100vw] h-screen bg-[#FFFAF0]">
+            <Section1 />
           </section>
           <section id="component" className="w-[100vw] h-screen bg-teal-200">
             <div className="min-h-screen w-full flex justify-center items-center text-[100px]">
