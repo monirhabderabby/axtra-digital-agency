@@ -34,33 +34,35 @@ const WhyChooseUs = () => {
   }, []);
 
   return (
-    <div>
-      <div ref={sectionRef} className="flex w-[500vw] h-screen relative">
-        <section id="component" className="w-[100vw] h-screen bg-orange-200">
-          <div className="min-h-screen w-full flex justify-center items-center text-[100px]">
-            Why Choose US 1
-          </div>
-        </section>
-        <section id="component" className="w-[100vw] h-screen bg-teal-200">
-          <div className="min-h-screen w-full flex justify-center items-center text-[100px]">
-            Why Choose US 2
-          </div>
-        </section>
-        <section id="component" className="w-[100vw] h-screen bg-yellow-200">
-          <div className="min-h-screen w-full flex justify-center items-center text-[100px]">
-            Why Choose US 3
-          </div>
-        </section>
-        <section id="component" className="w-[100vw] h-screen bg-slate-200">
-          <div className="min-h-screen w-full flex justify-center items-center text-[100px]">
-            Why Choose US 4
-          </div>
-        </section>
-        <section id="component" className="w-[100vw] h-screen bg-orange-200">
-          <div className="min-h-screen w-full flex justify-center items-center text-[100px]">
-            Why Choose US 5
-          </div>
-        </section>
+    <div className="">
+      <div>
+        <div ref={sectionRef} className="flex w-[500vw] h-screen relative">
+          <section id="component" className="w-[100vw] h-screen bg-orange-200">
+            <div className="min-h-screen w-full flex justify-center items-center text-[100px]">
+              Why Choose US 1
+            </div>
+          </section>
+          <section id="component" className="w-[100vw] h-screen bg-teal-200">
+            <div className="min-h-screen w-full flex justify-center items-center text-[100px]">
+              Why Choose US 2
+            </div>
+          </section>
+          <section id="component" className="w-[100vw] h-screen bg-yellow-200">
+            <div className="min-h-screen w-full flex justify-center items-center text-[100px]">
+              Why Choose US 3
+            </div>
+          </section>
+          <section id="component" className="w-[100vw] h-screen bg-slate-200">
+            <div className="min-h-screen w-full flex justify-center items-center text-[100px]">
+              Why Choose US 4
+            </div>
+          </section>
+          <section id="component" className="w-[100vw] h-screen bg-orange-200">
+            <div className="min-h-screen w-full flex justify-center items-center text-[100px]">
+              Why Choose US 5
+            </div>
+          </section>
+        </div>
       </div>
     </div>
   );
