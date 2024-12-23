@@ -2,11 +2,22 @@ import Image from "next/image";
 
 import ScrollDown from "@/components/ui/scroll-down";
 import meeting from "../../../public/meeting.webp";
+import star from "../../../public/star.png";
+// import introVideo from "../../../public/video/hero-3.mp4";
 import GradualSpacing from "../ui/gradual-spacing";
 
 export default function Hero() {
   return (
-    <div className="flex flex-col pt-[100px] min-h-screen z-50">
+    <div className="flex flex-col pt-[100px] min-h-screen z-50 relative">
+      <Image
+        src={star}
+        width={50}
+        height={50}
+        alt="star"
+        placeholder="blur"
+        quality={100}
+        className="hidden md:block absolute right-[100px]"
+      />
       <div className="container flex items-center">
         <h4 className="capitalize text-[24px] font-semibold pr-[30px]">
           DIGITAL
