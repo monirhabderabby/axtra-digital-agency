@@ -1,3 +1,4 @@
+import FeaturedWork from "@/components/sections/featured-work";
 import Hero from "@/components/sections/hero";
 import Services from "@/components/sections/services";
 import Footer from "@/components/ui/footer";
@@ -13,6 +14,7 @@ export default function Home() {
 
       <WhoWeAre />
       <Services />
+      <FeaturedWork />
       <Footer />
     </>
   );

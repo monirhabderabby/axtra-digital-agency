@@ -93,7 +93,7 @@ const Navbar = () => {
     };
   }, []);
   return (
-    <section className="sticky top-0">
+    <section className="sticky top-0 z-30">
       <div
         className={cn(
           "h-[80px]   px-6 flex items-center justify-between relative",
