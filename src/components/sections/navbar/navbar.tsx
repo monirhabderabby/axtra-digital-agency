@@ -3,12 +3,12 @@ import { cn } from "@/lib/utils";
 import { Menu, Search } from "lucide-react";
 import { useTheme } from "next-themes";
 import Image from "next/image";
-import Link from "next/link";
 import { useEffect, useState } from "react";
-import logoWhite from "../../../public/logo-white.webp";
-import logo from "../../../public/logo.webp";
-import menu from "../../../public/menu-black.webp";
-import { Separator } from "../ui/separator";
+import logoWhite from "../../../../public/logo-white.webp";
+import logo from "../../../../public/logo.webp";
+import menu from "../../../../public/menu-black.webp";
+import { Separator } from "../../ui/separator";
+import NavItems from "./navItems";
 
 const links = [
   {
@@ -25,6 +25,30 @@ const links = [
     id: 3,
     name: "Pages",
     href: "/pages",
+    subMenus: [
+      {
+        id: 1,
+        title: "Title A",
+        links: [
+          {
+            id: 1,
+            name: "Item 1",
+            href: "/1",
+          },
+        ],
+      },
+      {
+        id: 2,
+        title: "Title B",
+        links: [
+          {
+            id: 1,
+            name: "Item $",
+            href: "/1",
+          },
+        ],
+      },
+    ],
   },
   {
     id: 4,
@@ -83,14 +107,8 @@ const Navbar = () => {
         )}
 
         <div className="h-full flex justify-center items-center gap-x-12">
-          {links.map(({ id, href, name }) => (
-            <Link
-              href={href}
-              key={id}
-              className="capitalize text-foreground hover:opacity-80 transition-all duration-300 hover:tracking-widest font-normal"
-            >
-              {name}
-            </Link>
+          {links.map(({ id, href, name, subMenus }) => (
+            <NavItems key={id} href={href} name={name} subMenu={subMenus} />
           ))}
         </div>
         <div className="flex justify-center items-center gap-x-4">

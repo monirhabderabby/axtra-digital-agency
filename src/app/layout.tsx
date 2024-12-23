@@ -1,4 +1,4 @@
-import Navbar from "@/components/sections/navbar";
+import Navbar from "@/components/sections/navbar/navbar";
 import ThemeToggler from "@/components/ui/theme-toogler";
 import { ThemeProvider } from "@/provider/theme-provider";
 import type { Metadata } from "next";
