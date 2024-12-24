@@ -3,6 +3,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { useEffect, useRef } from "react";
 import Section1 from "./section1";
+import Section2 from "./section2";
 
 const WhyChooseUs = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -23,7 +24,7 @@ const WhyChooseUs = () => {
           trigger: sectionRef.current,
           start: "top top",
           end: "2000 top",
-          scrub: 0.6,
+          scrub: 0.8,
           pin: true,
         },
       }
@@ -41,10 +42,8 @@ const WhyChooseUs = () => {
           <section id="component" className="w-[100vw] h-screen bg-[#FFFAF0]">
             <Section1 />
           </section>
-          <section id="component" className="w-[100vw] h-screen bg-teal-200">
-            <div className="min-h-screen w-full flex justify-center items-center text-[100px]">
-              Why Choose US 2
-            </div>
+          <section id="component" className="w-[100vw] h-screen bg-[#F3ECEC]">
+            <Section2 />
           </section>
           <section id="component" className="w-[100vw] h-screen bg-yellow-200">
             <div className="min-h-screen w-full flex justify-center items-center text-[100px]">
