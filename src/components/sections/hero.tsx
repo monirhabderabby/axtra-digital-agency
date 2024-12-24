@@ -5,6 +5,7 @@ import meeting from "../../../public/meeting.webp";
 import star from "../../../public/star.png";
 // import introVideo from "../../../public/video/hero-3.mp4";
 import GradualSpacing from "../ui/gradual-spacing";
+import HeroDescription from "../ui/hero-description";
 
 export default function Hero() {
   return (
@@ -32,14 +33,7 @@ export default function Hero() {
         />
       </div>
       <div className="container flex flex-col-reverse md:flex-row items-end  md:items-center gap-x-8 lg:gap-x-[100px] ">
-        <div>
-          <p className="max-w-[450px]">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta
-            sequi alias eaque asperiores beatae officiis nam similique
-            perspiciatis omnis blanditiis debitis enim vero, tempore magni autem
-            pariatur eos minus! Natus?
-          </p>
-        </div>
+        <HeroDescription />
         <GradualSpacing
           className="text-[100px] md:text-[160px] lg:text-[260px] font-bold leading-[80px] md:leading-[130px] lg:leading-[200px]"
           text="ETING"
