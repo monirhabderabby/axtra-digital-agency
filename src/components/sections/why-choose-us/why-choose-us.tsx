@@ -5,6 +5,7 @@ import { useEffect, useRef } from "react";
 import Section1 from "./section1";
 import Section2 from "./section2";
 import Section3 from "./section3";
+import Section4 from "./section4";
 
 const WhyChooseUs = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -18,7 +19,7 @@ const WhyChooseUs = () => {
         translateX: 0,
       },
       {
-        translateX: "-400vw",
+        translateX: "-300vw",
         ease: "none",
         duration: 1,
         scrollTrigger: {
@@ -49,15 +50,8 @@ const WhyChooseUs = () => {
           <section id="component" className="w-[100vw] h-screen bg-[#FFFAF0]">
             <Section3 />
           </section>
-          <section id="component" className="w-[100vw] h-screen bg-slate-200">
-            <div className="min-h-screen w-full flex justify-center items-center text-[100px]">
-              Why Choose US 4
-            </div>
-          </section>
-          <section id="component" className="w-[100vw] h-screen bg-orange-200">
-            <div className="min-h-screen w-full flex justify-center items-center text-[100px]">
-              Why Choose US 5
-            </div>
+          <section id="component" className="w-[100vw] h-screen bg-[#E0E3CC]">
+            <Section4 />
           </section>
         </div>
       </div>
