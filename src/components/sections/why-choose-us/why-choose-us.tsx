@@ -26,7 +26,7 @@ const WhyChooseUs = () => {
           trigger: sectionRef.current,
           start: "top top",
           end: "2000 top",
-          scrub: 0.8,
+          scrub: 1,
           pin: true,
         },
       }
