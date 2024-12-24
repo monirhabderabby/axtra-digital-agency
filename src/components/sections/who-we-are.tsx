@@ -10,7 +10,6 @@ import img3 from "../../../public/brands/3.webp";
 import img4 from "../../../public/brands/4.webp";
 import img5 from "../../../public/brands/5.webp";
 import img6 from "../../../public/brands/6.webp";
-import meeting2 from "../../../public/meeting2.webp";
 
 const brands = [
   {
@@ -60,7 +59,14 @@ const WhoWeAre = () => {
 
       <div className="bg-primary-black">
         <div className="container py-[140px] flex flex-col lg:flex-row gap-x-[100px] items-center ">
-          <Image src={meeting2} width={551} height={847} alt="meeting2" />
+          {/* <Image
+            src={meeting2}
+            width={551}
+            height={847}
+            alt="meeting2"
+            className=""
+          /> */}
+          <div className="who w-[551px]  h-[750px] bg-fixed flex-shrink-0 bg-no-repeat bg-cover bg-center" />
           <div>
             <div className="text-white pt-5">
               <h5 className="text-[18px]">WHO WE ARE</h5>
