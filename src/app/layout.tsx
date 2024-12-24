@@ -1,5 +1,7 @@
 import Navbar from "@/components/sections/navbar/navbar";
+import ArrowDown from "@/components/ui/arrow-down";
 import ThemeToggler from "@/components/ui/theme-toogler";
+import NeonCursor from "@/provider/neon-curson";
 import { ThemeProvider } from "@/provider/theme-provider";
 import type { Metadata } from "next";
 import { Kanit } from "next/font/google";
@@ -26,11 +28,13 @@ export default function RootLayout({
         className={`${kanit.className} antialiased overflow-x-hidden dark:bg-[#181414] `}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <NeonCursor />
           <div className="sticky top-1/2 z-30">
             <ThemeToggler />
           </div>
           <Navbar />
           {children}
+          <ArrowDown />
         </ThemeProvider>
       </body>
     </html>

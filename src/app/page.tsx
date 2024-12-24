@@ -1,5 +1,6 @@
 import FeaturedWork from "@/components/sections/featured-work";
 import Hero from "@/components/sections/hero";
+import Journal from "@/components/sections/journal";
 import PricingTable from "@/components/sections/pricing-table";
 import Reviews from "@/components/sections/reviews";
 import Services from "@/components/sections/services";
@@ -21,6 +22,7 @@ export default function Home() {
       <Reviews />
       <WhyChooseUs />
       <PricingTable />
+      <Journal />
       <Footer />
     </>
   );

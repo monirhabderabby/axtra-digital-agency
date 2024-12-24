@@ -1,17 +1,16 @@
 "use client";
 import { cn } from "@/lib/utils";
+import { motion, useAnimation } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { useTheme } from "next-themes";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import img1 from "../../../public/brands/1.webp";
 import img2 from "../../../public/brands/2.webp";
 import img3 from "../../../public/brands/3.webp";
 import img4 from "../../../public/brands/4.webp";
 import img5 from "../../../public/brands/5.webp";
 import img6 from "../../../public/brands/6.webp";
-import meeting2 from "../../../public/meeting2.webp";
-
 const brands = [
   {
     id: 1,
@@ -60,7 +59,7 @@ const WhoWeAre = () => {
 
       <div className="bg-primary-black">
         <div className="container py-[140px] flex flex-col lg:flex-row gap-x-[100px] items-center ">
-          <Image src={meeting2} width={551} height={847} alt="meeting2" />
+          <div className="who w-[551px]  h-[750px] bg-fixed flex-shrink-0 bg-no-repeat bg-cover bg-center" />
           <div>
             <div className="text-white pt-5">
               <h5 className="text-[18px]">WHO WE ARE</h5>
@@ -90,14 +89,61 @@ const WhoWeAre = () => {
 export default WhoWeAre;
 
 const Brands = () => {
+  const controls = useAnimation();
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const node = containerRef.current;
+
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        controls.start((i) => ({
+          scale: 1,
+          opacity: 1,
+          y: 1,
+          transition: {
+            duration: 1,
+            delay: i * 0.2,
+          },
+        }));
+      } else {
+        controls.start(() => ({
+          y: 50,
+          scale: 0.5,
+          opacity: 0,
+          transition: {
+            duration: 1,
+          },
+        }));
+      }
+    });
+
+    if (node) {
+      observer.observe(node);
+    }
+
+    return () => {
+      if (node) observer.unobserve(node);
+    };
+  }, [controls]);
   return (
     <div className="pb-[70px] md:pb-[140px]">
       <h2 className="text-foreground text-center text-[18px]">
         WE WORKED WITH GLOBAL LARGEST BRANDS
       </h2>
-      <div className="container justify-center mt-[63px] flex items-center flex-wrap gap-12">
-        {brands.map(({ id, img }) => (
-          <Image src={img} key={id} width={100} height={160} alt="brandLOGO" />
+      <div
+        className="container justify-center mt-[63px] flex items-center flex-wrap gap-12"
+        ref={containerRef}
+      >
+        {brands.map(({ id, img }, i) => (
+          <motion.div
+            key={id}
+            custom={i}
+            animate={controls}
+            initial={{ scale: 0.5, opacity: 0, y: 50 }}
+          >
+            <Image src={img} width={100} height={160} alt="brandLOGO" />
+          </motion.div>
         ))}
       </div>
     </div>
