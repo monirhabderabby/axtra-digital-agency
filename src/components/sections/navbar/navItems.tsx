@@ -1,5 +1,6 @@
+import useOutsideClick from "@/hooks/useOutsideClick";
 import Link from "next/link";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 type menu = {
   href: string;
@@ -21,6 +22,11 @@ interface Props {
 
 const NavItems = ({ href, name, subMenu }: Props) => {
   const [hovered, setHovered] = useState(false);
+  const containerRef = useRef(null);
+
+  useOutsideClick(containerRef, () => {
+    setHovered(false);
+  });
 
   return (
     <div>
@@ -38,7 +44,10 @@ const NavItems = ({ href, name, subMenu }: Props) => {
       </Link>
 
       {hovered && subMenu && (
-        <div className="w-fit absolute bg-primary-black h-auto top-[80px] rounded-[4px] p-10 flex gap-10 flex-wrap">
+        <div
+          ref={containerRef}
+          className="w-fit absolute bg-primary-black h-auto top-[80px] rounded-[4px] p-10 flex gap-10 flex-wrap"
+        >
           {subMenu.map(({ id, title, links }) => (
             <div key={id} className="border-r border-white/10 pr-10">
               <h3 className="text-white text-[18px] font-medium">{title}</h3>
