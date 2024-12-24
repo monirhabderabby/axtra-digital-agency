@@ -23,7 +23,16 @@ const ScrollDown = () => {
   }, []);
   return (
     <div>
-      <button ref={buttonRef} className="border-[1px] p-2 py-6 rounded-full ">
+      <button
+        ref={buttonRef}
+        className="border-[1px] p-2 py-6 rounded-full "
+        onClick={() => {
+          window.scrollTo({
+            top: document.body.scrollHeight,
+            behavior: "smooth",
+          });
+        }}
+      >
         <Image src={arrowDown} height={40} width={20} alt="icon" />
       </button>
     </div>

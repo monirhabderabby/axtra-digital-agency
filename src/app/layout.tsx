@@ -1,4 +1,5 @@
 import Navbar from "@/components/sections/navbar/navbar";
+import ArrowDown from "@/components/ui/arrow-down";
 import ThemeToggler from "@/components/ui/theme-toogler";
 import NeonCursor from "@/provider/neon-curson";
 import { ThemeProvider } from "@/provider/theme-provider";
@@ -33,6 +34,7 @@ export default function RootLayout({
           </div>
           <Navbar />
           {children}
+          <ArrowDown />
         </ThemeProvider>
       </body>
     </html>

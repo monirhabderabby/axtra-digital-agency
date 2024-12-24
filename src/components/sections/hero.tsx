@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import ScrollDown from "@/components/ui/scroll-down";
-import meeting from "../../../public/meeting.webp";
+import meeting from "../../../public/meeting4.webp";
 import star from "../../../public/star.png";
 // import introVideo from "../../../public/video/hero-3.mp4";
 import GradualSpacing from "../ui/gradual-spacing";
@@ -43,7 +43,7 @@ export default function Hero() {
       </div>
       <div className="container flex -z-30">
         <ScrollDown />
-        <div className=" absolute bottom-0 right-4 -z-30 w-[300px] h-[200px] md:w-[500px] lg:w-[1000px] md:h-[300px] lg:h-[400px]">
+        <div className=" absolute bottom-0 right-4 -z-30 w-[300px] h-[200px] md:w-[500px] lg:w-[1000px] md:h-[300px] lg:h-[450px]">
           <Image src={meeting} fill alt="hero" />
         </div>
       </div>
